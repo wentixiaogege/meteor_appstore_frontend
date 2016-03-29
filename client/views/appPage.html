@@ -1,0 +1,59 @@
+<template name="suggestedApp">
+    <div class="reccomendedApp">
+        <a href="{{pathFor 'appPage'}}"><img height=50 width=50 src="{{iconUrl}}"/></a>
+        <a href="{{pathFor 'appPage'}}" style="display:block;">{{name}}</a>
+    </div>
+</template>
+
+<template name="appPage">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                    <a id="backLink"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+            </div>
+        </div>
+    </nav>
+    <div class="appPageContent">
+        <div class="row">
+            <div class="col-xs-5">
+                <img height=120 width=120 src="{{iconUrl}}"/>
+            </div>
+            <div class="col-xs-7 appInfo">
+                <div class="appTitle">{{name}}</div>
+                <p class="text-muted">{{developer}}</p>
+                <p class="text-muted">总共被{{numberOfRecommendations}}个应用推荐</p>
+                <div class="ratingsArea">
+                    {{> starsRating rating=avgRating class='mystar' size='sm'}}
+                </div>
+            </div>
+        </div>
+        <hr/>
+        {{#if reccomendedApps}}
+            <div class="row">
+                <div class="col-xs-12">
+                    Customers also like
+                </div>
+            </div>
+            <div class="row overflowWrapper">
+                <div class="suggestedAppContainer">
+                    {{#each reccomendedApps}}
+                        {{> suggestedApp getSuggestedApp this}}
+                    {{/each}}
+                </div>
+            </div>
+            <hr/>
+        {{/if}}
+        <div class="row">
+            <div class="col-xs-12">
+                <strong>Description</strong>
+            </div>
+        </div>
+        <div class="row" style="margin-top:10px;">
+            <div class="col-xs-12">
+                <p class="text-muted">
+                    {{description}}
+                </p>
+            </div>
+        </div>
+    </div>
+</template>

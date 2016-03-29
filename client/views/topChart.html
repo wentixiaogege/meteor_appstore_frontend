@@ -1,0 +1,14 @@
+<template name="topChart">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="text-center" id="navTitle">
+                <strong>Top Charts</strong>
+            </div>
+        </div>
+    </nav>
+    <ul class="list-group">
+        {{#each apps}}
+            {{> appPreview this}}
+        {{/each}}
+    </ul>
+</template>
