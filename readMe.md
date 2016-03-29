@@ -1,3 +1,6 @@
+in a whole meteor is a nodejs framework based on data-driven;so that
+every thing in the fron are the templates for using data.
+
 
 ##debugging 
   using meteor shell to interate with the server 
