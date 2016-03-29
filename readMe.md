@@ -13,3 +13,8 @@
 ##modified 
 change the url into app_id for better understanding
 add the homework 
+
+
+##Demo
+![alt tag](./img/home.png)
+![alt tag](./img/detail.png)
